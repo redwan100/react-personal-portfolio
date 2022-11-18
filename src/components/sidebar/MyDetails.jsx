@@ -8,7 +8,7 @@ const Details = styled.div`
     .line {
       width: 2px;
       height: 110%;
-      background-color: #cfcfcf9b;
+      background-color:  ${({ theme }) => theme.lineClr};
       display: block;
       border-radius: 20px;
       position: absolute;
@@ -23,22 +23,22 @@ const Details = styled.div`
       margin-bottom: 1rem;
 
       h5{
-        color: #4a4a4a;
+        color: ${({theme}) => theme.descColor};
         margin-right:7px ;
       }
 
       span{
-        color: #282828dd;
+        color: ${({theme}) => theme.fontColor};
         font-size: 14px;
       }
 
       .dot {
         width: 8px;
         height: 8px;
-        border: 2px solid var(--primary-clr);
+        border: 2px solid  ${({ theme }) => theme.btnClr};;
         border-radius: 50%;
-        background-color: white;
-        box-shadow: 0 0 0 5px white;
+        background-color: ${({theme}) => theme.background};
+        box-shadow: 0 0 0 5px ${({theme})=> theme.primaryColor};
         display: inline-block;
         z-index: 2;
         margin-right: .75rem;
@@ -49,7 +49,7 @@ const Details = styled.div`
   .user {
     width: 45px;
     height: 45px;
-    background-color: var(--primary-clr);
+    background-color:  ${({ theme }) => theme.btnClr};;
     border-radius: 50%;
     position: absolute;
     top: -55px;

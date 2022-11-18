@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ButtonStyle = styled.button`
-  background-color: var(--primary-clr);
+  background-color: ${({ theme }) => theme.btnClr};
   border: none;
   outline: none;
   font-weight: 600;
@@ -14,9 +14,10 @@ const ButtonStyle = styled.button`
   padding: 0.35rem 0.5rem 0.35rem 0.75rem;
   border-radius: 20px;
   cursor: pointer;
+  color:  ${({ theme }) => theme.fontColor};
 
   .icon {
-    background-color: var(--white-clr);
+    background-color: ${({ theme }) => theme.primaryColor};
     width: 25px;
     height: 25px;
     padding: 0.25rem;

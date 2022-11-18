@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const BlogStyle = styled.div`
   margin-top: 2rem;
-  background-color: white;
+  background-color:  ${({ theme }) => theme.primaryColor};
   padding: 1rem;
   border-radius: 7px;
   text-align: center;
@@ -17,13 +17,13 @@ const BlogStyle = styled.div`
       text-transform: uppercase;
       color: transparent;
       -webkit-text-stroke: 2px;
-      -webkit-text-stroke-color: #d28c14;
+      -webkit-text-stroke-color: ${({ theme }) => theme.btnClr};
       font-style: italic;
       font-weight: 700;
     }
     p {
       font-size: 3rem;
-      color: #605656;
+      color:  ${({ theme }) => theme.descColor};
       margin-top: -10px;
       transform: translateY(-20px) rotate(-3deg);
       font-family: 'Pacifico', cursive;

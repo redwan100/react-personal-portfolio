@@ -5,7 +5,7 @@ import skillsData from '../constant/skills';
 
 const SkillStyle = styled.div`
   padding: 1.5rem;
-
+ 
   .wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -13,7 +13,7 @@ const SkillStyle = styled.div`
   }
 
   .item {
-    background-color: var(--white-clr);
+    background-color:   ${({ theme }) => theme.primaryColor};
     padding: 1.5rem;
     border-radius: 7px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
@@ -27,14 +27,14 @@ const SkillStyle = styled.div`
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    border: 2px solid var(--primary-clr);
+    border: 2px solid  ${({ theme }) => theme.btnClr};
     display: inline-block;
   }
   .skill{
     display: flex;
     align-items: center;
     gap:.45rem;
-    color: #333232;
+    color:  ${({ theme }) => theme.descColor};
     font-size: 15px;
     margin-bottom: .25rem;
   }

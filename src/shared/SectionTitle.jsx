@@ -8,7 +8,7 @@ const SectionTitleStyle = styled.h3`
     content: '';
     width: 100%;
     height: 7px;
-    background-color: #ffcd38aa;
+    background-color:  ${({ theme }) => theme.primaryColor};
     position: absolute;
     bottom: 4px;
     left: 0;

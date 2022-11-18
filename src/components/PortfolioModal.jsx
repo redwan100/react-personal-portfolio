@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import Img from '../assets/pictures/instagram (1).jpg';
-import {FaTwitter, FaGithub} from 'react-icons/fa'
-import {TfiWorld} from 'react-icons/tfi'
+import { FaTwitter, FaGithub } from 'react-icons/fa';
+import { TfiWorld } from 'react-icons/tfi';
+
 const ModalStyle = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: #0e0e0fb6;
+  background-color: ${({ theme }) => theme.modalBg};
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +15,7 @@ const ModalStyle = styled.div`
   align-items: center;
   padding: 2rem;
   .modal {
-    background-color: #ffffff;
+    background-color: ${({ theme }) => theme.background};
     max-width: 600px;
     width: 99%;
     max-height: 530px;
@@ -30,7 +30,6 @@ const ModalStyle = styled.div`
       width: 100%;
       height: 280px;
 
-
       img {
         width: 100%;
         max-height: 100%;
@@ -43,7 +42,7 @@ const ModalStyle = styled.div`
       padding: 1rem;
 
       a {
-        color: var(--primary-clr);
+        color: ${({ theme }) => theme.btnClr};
         font-weight: 600;
         font-size: 17px;
         letter-spacing: 0.86px;
@@ -59,19 +58,18 @@ const ModalStyle = styled.div`
       gap: 1rem;
       padding: 1rem;
 
-      a{
+      a {
         font-size: 1.5rem;
-        transition: color .3s;
+        transition: color 0.3s;
 
-        &:hover{
-            color: var(--primary-clr);
+        &:hover {
+          color:  ${({ theme }) => theme.btnClr};
         }
       }
     }
   }
 `;
 function PortfolioModal({ setIsShowModal, item }) {
-
   return (
     <ModalStyle onClick={() => setIsShowModal(false)}>
       <div className="modal">
@@ -81,16 +79,21 @@ function PortfolioModal({ setIsShowModal, item }) {
         </div>
         <div className="desc">
           <p>
-           {item.desc} <a href="">Live Demo</a>
+            {item.desc} <a href="">Live Demo</a>
           </p>
         </div>
         <div className="icons">
-         <a href={item.gitLink} target="_blank"> <FaTwitter /></a>
-         <a href={item.gitLink} target="_blank">   <FaGithub /></a>
-         <a href={item.webLink} target="_blank">  
-                <TfiWorld />
-         </a>
-
+          <a href={item.gitLink} target="_blank" rel="noreferrer">
+            {' '}
+            <FaTwitter />
+          </a>
+          <a href={item.gitLink} target="_blank" rel="noreferrer">
+            {' '}
+            <FaGithub />
+          </a>
+          <a href={item.webLink} target="_blank" rel="noreferrer">
+            <TfiWorld />
+          </a>
         </div>
       </div>
     </ModalStyle>

@@ -3,33 +3,37 @@ import styled from 'styled-components';
 import { AiFillHome } from 'react-icons/ai';
 import { GrFormClose } from 'react-icons/gr';
 import { CgMenuRight } from 'react-icons/cg';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaTelegramPlane } from 'react-icons/fa';
 import Social from '../Social';
 import Button from '../../shared/Button';
-
 
 const NavbarStyle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  background-color: var(--white-clr);
+  background-color: ${({ theme }) => theme.primaryColor};
   height: 65px;
   overflow: hidden;
   border-radius: 10px;
   padding-right: 1rem;
+  position: sticky;
+  top: 5px;
+  left: 0;
+  z-index: 1000;
 
   .home {
-    background-color: var(--primary-clr);
+    background-color: ${({ theme }) => theme.btnClr};
     width: 65px;
     height: 80px;
     padding: 1.4rem;
     margin-right: 0.5rem;
     transition: all 0.3s;
+    color:  ${({ theme }) => theme.fontColor} !important;
 
     &:hover {
-      background-color: #f1c215;
+      background-color: ${({ theme }) => theme.btnClr};
     }
   }
   .left {
@@ -50,7 +54,7 @@ const NavbarStyle = styled.div`
         transition: 0.2s;
 
         &:hover {
-          color: var(--primary-clr);
+          color: ${({ theme }) => theme.actClr};
         }
       }
     }
@@ -64,7 +68,7 @@ const NavbarStyle = styled.div`
   }
 
   .active {
-    color: var(--primary-clr);
+    color: ${({theme}) => theme.actClr};
   }
 
   .close {
@@ -126,8 +130,15 @@ const NavbarStyle = styled.div`
 
 function Navbar() {
   const [showNav, setShowNav] = useState(false);
+
+  const [scroll, setScroll] = useState(false);
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setScroll(window.scrollY > 80);
+    });
+  }, []);
   return (
-    <NavbarStyle>
+    <NavbarStyle style={scroll ? { boxShadow: '0 0 20px rgba(0,0,0,0.2)' } : {}}>
       <div className="left">
         <NavLink to="/" className={(navInfo) => (navInfo.isActive ? 'active' : '')}>
           <AiFillHome className="home" color="black" />

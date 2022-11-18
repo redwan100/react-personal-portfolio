@@ -1,23 +1,24 @@
 import { createGlobalStyle } from 'styled-components';
-import Bg from './assets/bg.png';
+
 
 const GlobalStyle = createGlobalStyle`
-:root{
-    --primary-clr: #FFC500;
-    --primary-clr-alt:#FFC913;
-    --white-clr: #FFFFFF;
-    --text-clr:#1111;
+
+
+html{
+  scroll-behavior: smooth;
 }
  *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family:"Poppins", sans-serif
- }
-
- body{
-   background-color: gray;
-   padding: 1rem;
+    font-family:"Poppins", sans-serif;
+  }
+  
+  body{
+    padding: 2rem;
+    background: ${({ theme }) => theme.background};
+    color: ${({ theme }) => theme.fontColor};
+    transition: all .2s ease;
  }
 
  a{
@@ -42,5 +43,16 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
 }
 
+
+@media (max-width: 580px){
+  body{
+    padding: 1rem;
+  }
+}
+@media (min-width: 980px){
+  body{
+    padding: 3rem;
+  }
+}
 `;
 export default GlobalStyle;

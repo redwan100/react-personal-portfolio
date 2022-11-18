@@ -6,7 +6,7 @@ import portfolioData from '../constant/portfolio';
 import SectionTitle from '../shared/SectionTitle';
 
 const PortStyle = styled.div`
-  background-color: white;
+  background-color:  ${({ theme }) => theme.primaryColor};
   margin-top: 2rem;
   border-radius: 6px;
   padding: 1.5rem;
@@ -35,40 +35,34 @@ const PortStyle = styled.div`
     }
   }
   .activeColor {
-    color: #f4c20d;
+    color: ${({theme})=>theme.actClr};
   }
 
   /* TODO: portfolio */
   .portItems {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 1rem;
+    gap: 1.5rem;
 
     .pItem {
       border-radius: 6px;
       overflow: hidden;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-      cursor: pointer;
-
-      &:hover ~ desc {
-        background-color: gray;
-      }
+      box-shadow: ${({theme})=>theme.shadow};
     }
 
     .desc {
       padding: 0.5rem 1rem;
-      background-color: white;
+      background-color: ${({theme})=>theme.primaryColor};
       height: 100%;
 
       h3 {
         font-size: 15px;
-        color: #181717;
+        color: ${({theme})=>theme.fontColor};
       }
 
       p {
         font-size: 13px;
-        color: #403f3f;
+        color: ${({theme})=>theme.descColor};
       }
     }
 
@@ -82,15 +76,13 @@ const PortStyle = styled.div`
     }
   }
 
-  .pItem:hover ~ desc {
-    background-color: gray !important;
-  }
 
   @media (min-width: 1030px) {
     .portItems {
       grid-template-columns: repeat(3, minmax(210px, 1fr));
     }
   }
+
 `;
 // const btns = [...new Set(portfolioData.map((item) => item.group))];
 const btns = ['reactJs', 'Bootstrap', 'JavaScript', 'Html Css'];

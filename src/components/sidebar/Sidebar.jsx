@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { MdOutlineFileDownload } from 'react-icons/md';
-import Person from '../../assets/person.jpg';
+import Typed from 'react-typed';
+import { HiOutlineSun } from 'react-icons/hi';
+import { BiMoon } from 'react-icons/bi';
+import Person from '../../assets/person2.jpg';
 import MyDetails from './MyDetails';
 import Button from '../../shared/Button';
 
 const SideBar = styled.div`
-  background-color: var(--white-clr);
+  background-color: ${({ theme }) => theme.primaryColor};
   margin-bottom: 2rem;
   border-radius: 10px;
+  position: relative;
 
   .title {
     padding: 1rem;
@@ -17,7 +21,7 @@ const SideBar = styled.div`
     }
 
     p {
-      color: gray;
+      color: ${({ theme }) => theme.descColor};
     }
   }
 
@@ -31,22 +35,55 @@ const SideBar = styled.div`
     }
   }
   .details {
-    padding: 1.5rem;
+    padding: 1rem 0 0 2rem;
   }
 
-  .downBtn{
+  .downBtn {
     margin: 0 auto;
     display: block;
     width: max-content;
-    padding: 2rem 0;
+    padding: 0 0 1rem;
+  }
+  .theme {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: ${({ theme }) => theme.descColor};
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    color: ${({ theme }) => theme.background};
+    transition: all .2s;
+
   }
 `;
-function Sidebar() {
+function Sidebar({ toggleThem }) {
+  const [mode, setMode] = useState(false);
+  const handleMode = () => {
+    setMode(!mode);
+    toggleThem()
+  };
   return (
-    <SideBar>
+    <SideBar className="sidebar">
+      <div className="theme" onClick={handleMode}>
+      {mode ? <HiOutlineSun /> : <BiMoon />}
+      </div>
       <div className="title">
         <h2>Redwan islam</h2>
-        <p>Front-End Developer</p>
+        <p>
+          <Typed
+            strings={['Front-End Web Developer.', 'Web Designer']}
+            loop
+            typeSpeed={40}
+            backSpeed={20}
+            backDelay={500}
+            smartBackspace
+            cursorChar="&#9825;"
+          />
+        </p>
       </div>
 
       <div className="imgBox">
@@ -56,7 +93,7 @@ function Sidebar() {
         <MyDetails />
       </div>
 
-      <div className='downBtn'>
+      <div className="downBtn">
         <Button text="Download" icon={<MdOutlineFileDownload />} />
       </div>
     </SideBar>

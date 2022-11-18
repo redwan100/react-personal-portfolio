@@ -14,7 +14,7 @@ const Services = styled.div`
   }
 
   .item {
-    background-color: var(--white-clr);
+    background-color: ${({theme}) => theme.primaryColor};
     padding: 1.25rem;
     border-radius: 7px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
@@ -29,7 +29,7 @@ const Services = styled.div`
 
   .para {
     text-align: inherit;
-    color: #221f1f;
+    color:${({theme}) => theme.descColor};
   }
 
   .title{

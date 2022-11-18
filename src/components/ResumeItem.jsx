@@ -15,7 +15,7 @@ const ResItem = styled.div`
   .line {
     width: 1.4px;
     height: 100%;
-    background-color: #c9c9c97f;
+    background-color:  ${({ theme }) => theme.lineClr};
     position: absolute;
     left: 7px;
     top: 0px;
@@ -30,12 +30,12 @@ const ResItem = styled.div`
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    border: 2px solid var(--primary-clr);
+    border: 2px solid  ${({ theme }) => theme.btnClr};
     position: absolute;
     top: 10px;
     left: -20px;
-    background-color: white;
-    box-shadow: 0 0 0 5px white;
+    background-color:  ${({ theme }) => theme.primaryColor};
+    box-shadow: 0 0 0 5px ${({ theme }) => theme.primaryColor};
     z-index: 4;
   }
 
@@ -44,7 +44,7 @@ const ResItem = styled.div`
     height: 45px;
     border-radius: 50%;
     padding: 0.65rem;
-    background-color: var(--primary-clr);
+    background-color: ${({ theme }) => theme.btnClr};
     box-shadow: 0 0 0 5px white;
     z-index: 5;
   }
@@ -74,7 +74,7 @@ const ResItem = styled.div`
     }
     p {
       margin-top: 5px;
-      color: #666;
+      color:  ${({ theme }) => theme.descColor};
     }
   }
 

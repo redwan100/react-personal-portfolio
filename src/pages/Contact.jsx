@@ -4,7 +4,7 @@ import Social from '../components/Social';
 import SectionTitle from '../shared/SectionTitle';
 
 const ContactStyle = styled.div`
-  background: white;
+  background: ${({ theme }) => theme.primaryColor};
   margin-top: 2rem;
   border-radius: 8px;
   .title {
@@ -20,7 +20,7 @@ const ContactStyle = styled.div`
 
       span {
         font-weight: 500;
-        color: #2e2a2a;
+        color: ${({ theme }) => theme.descColor};
         font-size: 14px;
       }
     }
@@ -44,9 +44,9 @@ const ContactStyle = styled.div`
 function Contact() {
   return (
     <motion.div
-      initial={{ x: 1000, opacity:0 }}
+      initial={{ x: 1000, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: .5, ease: "easeOut" }}>
+      transition={{ duration: 0.5, ease: 'easeOut' }}>
       <ContactStyle>
         <div>
           <SectionTitle title="Contact Information" />
@@ -66,7 +66,7 @@ function Contact() {
             Job: <span>Freelancer</span>
           </p>
           <p>
-            Skype
+            Skype:
             <span>
               <a href="#">Start Chat</a>
             </span>

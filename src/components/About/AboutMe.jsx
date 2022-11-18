@@ -5,7 +5,7 @@ import SectionTitle from '../../shared/SectionTitle';
 import Service from '../services/Service';
 
 const AboutStyle = styled.div`
-  background-color: var(--white-clr);
+  background-color: ${({ theme }) => theme.primaryColor};
   padding: 1.5rem;
   
   .title{
@@ -13,7 +13,7 @@ const AboutStyle = styled.div`
   }
   .para{
     margin-bottom: 1.5rem;
-    color: #272222;
+    color: ${({theme}) => theme.descColor};
   }
 
 `;
@@ -23,7 +23,7 @@ function AboutMe() {
       <AboutStyle>
         <SectionTitle title="About Me" />
         <Ptext
-          text="Hello Sir/Madam my name is Minhaz Miah a Front-End Developer. I have been studying web
+          text="Hello Sir/Madam my name is Redwan Islam a Front-End Developer. I have been studying web
         design and development since 2018 when I took my first web development class in high school.
         I have studied and practiced graphic and web design to further my knowledge of the entire
         process of building a web app. As a developer and entrepreneur, I believe in passion,

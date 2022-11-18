@@ -6,7 +6,7 @@ import SectionTitle from '../shared/SectionTitle';
 
 const ResumeStyle = styled.div`
   margin-top: 2rem;
-  background-color: var(--white-clr);
+  background-color: ${({ theme }) => theme.primaryColor};
   border-radius: 10px;
   padding: 2rem;
 
