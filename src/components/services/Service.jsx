@@ -14,25 +14,29 @@ const Services = styled.div`
   }
 
   .item {
-    background-color: ${({theme}) => theme.primaryColor};
+    position: relative;
+    background-color: ${({ theme }) => theme.primaryColorDark};
     padding: 1.25rem;
     border-radius: 7px;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 10px 20px 0px;
+    border: 1px solid ${({ theme }) => theme.borderClr};
+    transition: 0.3s ease;
+    z-index: 2;
 
-    h3{
-        margin-bottom:.5rem ;
+    h3 {
+      margin-bottom: 0.5rem;
     }
     .icon {
-      margin-bottom: .75rem;
+      margin-bottom: 0.75rem;
     }
   }
 
   .para {
     text-align: inherit;
-    color:${({theme}) => theme.descColor};
+    color: ${({ theme }) => theme.descColor};
   }
 
-  .title{
+  .title {
     margin-bottom: 1.5rem;
     font-size: 1.7rem;
   }

@@ -45,7 +45,7 @@ const ResItem = styled.div`
     border-radius: 50%;
     padding: 0.65rem;
     background-color: ${({ theme }) => theme.btnClr};
-    box-shadow: 0 0 0 5px white;
+    box-shadow: 0 0 0 5px ${({ theme }) => theme.primaryColor};
     z-index: 5;
   }
 

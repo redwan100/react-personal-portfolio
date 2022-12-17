@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { FaTwitter, FaGithub } from 'react-icons/fa';
 import { TfiWorld } from 'react-icons/tfi';
+import { motion } from 'framer-motion';
 
 const ModalStyle = styled.div`
   width: 100%;
@@ -16,6 +17,7 @@ const ModalStyle = styled.div`
   padding: 2rem;
   .modal {
     background-color: ${({ theme }) => theme.background};
+    
     max-width: 600px;
     width: 99%;
     max-height: 530px;
@@ -42,8 +44,9 @@ const ModalStyle = styled.div`
       padding: 1rem;
 
       a {
-        color: ${({ theme }) => theme.btnClr};
+        /* color: ${({ theme }) => theme.fontColor}; */
         font-weight: 600;
+        color:#ffc500;
         font-size: 17px;
         letter-spacing: 0.86px;
         text-decoration: underline;
@@ -57,13 +60,15 @@ const ModalStyle = styled.div`
       align-items: center;
       gap: 1rem;
       padding: 1rem;
-
+      
+      
       a {
         font-size: 1.5rem;
         transition: color 0.3s;
+        color: ${({ theme }) => theme.fontColor};
 
         &:hover {
-          color:  ${({ theme }) => theme.btnClr};
+          color: ${({ theme }) => theme.btnClr};
         }
       }
     }
@@ -72,7 +77,11 @@ const ModalStyle = styled.div`
 function PortfolioModal({ setIsShowModal, item }) {
   return (
     <ModalStyle onClick={() => setIsShowModal(false)}>
-      <div className="modal">
+      <motion.div
+        className="modal"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.2, ease: 'easeOut' }}>
         <h2>{item.title}</h2>
         <div className="imgBox">
           <img src={item.img} alt="image" />
@@ -95,7 +104,7 @@ function PortfolioModal({ setIsShowModal, item }) {
             <TfiWorld />
           </a>
         </div>
-      </div>
+      </motion.div>
     </ModalStyle>
   );
 }

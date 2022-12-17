@@ -8,8 +8,8 @@ const ContactStyle = styled.div`
   margin-top: 2rem;
   border-radius: 8px;
   .title {
-    margin-bottom: 1rem;
-    padding: 1.5rem;
+  
+    padding: 1.5rem .5rem .5rem 1.5rem;
   }
 
   .details {
@@ -33,6 +33,7 @@ const ContactStyle = styled.div`
   }
 
   .mapBox {
+    margin: 1.5rem 0;
     height: 500px;
     iframe {
       width: 100%;

@@ -14,7 +14,7 @@ const AppStyle = styled.div`
     flex: 1;
   }
   .right {
-    flex: 2;
+    flex: 2.5;
   }
 
   @media (max-width: 968px) {
@@ -39,19 +39,23 @@ const lightTheme = {
   descColor: '#5d5d5d',
   lineClr: '#5d5d5d',
   actClr: '#ffc500',
-  shadow: '0px 0px 70px -13px rgba(0,0,0,0.27)',
-  modalBg: 'rgba(0, 0, 0, 0.768)',
+  shadow: '0px 10px 35px 6px rgba(0,0,0,0.1)',
+  modalBg: 'rgba(0, 0, 0, 0.1)',
+  borderClr: '#54525223',
 };
 const darkTheme = {
-  background: '#2c2c2c',
-  primaryColor: '#5c594f',
-  btnClr: '#32302c',
+  background: '#191919',
+  primaryColor: '#333333',
+  primaryColorDark: '#4d4d4d',
+  btnClr: '#2b2a29',
   fontColor: '#eeeeee',
+  fontColor2: '#b1aeae',
   descColor: '#cdcdcd',
   lineClr: '#acacacc5',
   actClr: '#eee',
-  shadow: '0px 0px 70px -13px rgba(228, 228, 228, 0.334)',
-  modalBg: 'rgba(147, 147, 147, 0.73)',
+  shadow: '0px 0px 0px -13px rgba(228, 228, 228, 0.334)',
+  modalBg: 'rgba(92, 89, 89, 0.73)',
+  borderClr: '#322d2d58',
 };
 function App() {
   const [selectTheme, setSelectTheme] = useState('light');
@@ -61,8 +65,8 @@ function App() {
   };
 
   useEffect(() => {
-    const locolTheme = window.localStorage.getItem('theme');
-    locolTheme && setSelectTheme(locolTheme);
+    const localTheme = window.localStorage.getItem('theme');
+    localTheme && setSelectTheme(localTheme);
   }, []);
 
   const toggleThem = () => {

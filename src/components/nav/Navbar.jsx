@@ -44,7 +44,7 @@ const NavbarStyle = styled.div`
   ul {
     display: flex;
     align-items: center;
-    gap: 0.55rem;
+    gap: 0.75rem;
 
     li {
       a {
@@ -52,7 +52,7 @@ const NavbarStyle = styled.div`
         font-weight: 600;
         font-size: 15px;
         transition: 0.2s;
-
+        color: ${({ theme }) => theme.fontColor2};
         &:hover {
           color: ${({ theme }) => theme.actClr};
         }
@@ -64,11 +64,12 @@ const NavbarStyle = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 
   .active {
-    color: ${({theme}) => theme.actClr};
+    color: ${({ theme }) => theme.actClr};
+    font-weight: bold;
   }
 
   .close {
@@ -129,7 +130,7 @@ const NavbarStyle = styled.div`
 `;
 
 function Navbar() {
-  const [showNav, setShowNav] = useState(false);
+  const [showNav, setShowNav] = useState(true);
 
   const [scroll, setScroll] = useState(false);
   useEffect(() => {

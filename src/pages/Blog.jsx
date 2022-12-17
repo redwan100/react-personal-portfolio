@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const BlogStyle = styled.div`
   margin-top: 2rem;
-  background-color:  ${({ theme }) => theme.primaryColor};
+  background-color: ${({ theme }) => theme.primaryColor};
   padding: 1rem;
   border-radius: 7px;
   text-align: center;
@@ -23,7 +23,7 @@ const BlogStyle = styled.div`
     }
     p {
       font-size: 3rem;
-      color:  ${({ theme }) => theme.descColor};
+      color: ${({ theme }) => theme.descColor};
       margin-top: -10px;
       transform: translateY(-20px) rotate(-3deg);
       font-family: 'Pacifico', cursive;
@@ -33,9 +33,9 @@ const BlogStyle = styled.div`
 function Blog() {
   return (
     <motion.div
-      initial={{ x: 1000, opacity: 0 }}
+      initial={{ x: 200, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}>
+      transition={{ duration: 0.3, ease: 'easeOut' }}>
       <BlogStyle>
         <div className="blog">
           <h2 className="font-effect-fire-animation">blog</h2>

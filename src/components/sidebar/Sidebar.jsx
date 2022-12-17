@@ -8,6 +8,7 @@ import Person from '../../assets/person2.jpg';
 import MyDetails from './MyDetails';
 import Button from '../../shared/Button';
 
+
 const SideBar = styled.div`
   background-color: ${({ theme }) => theme.primaryColor};
   margin-bottom: 2rem;
@@ -56,21 +57,23 @@ const SideBar = styled.div`
     place-content: center;
     cursor: pointer;
     color: ${({ theme }) => theme.background};
-    transition: all .2s;
-
+    transition: all 0.2s;
+    z-index: 100;
   }
+
 `;
 function Sidebar({ toggleThem }) {
   const [mode, setMode] = useState(false);
   const handleMode = () => {
     setMode(!mode);
-    toggleThem()
+    toggleThem();
   };
   return (
     <SideBar className="sidebar">
       <div className="theme" onClick={handleMode}>
-      {mode ? <HiOutlineSun /> : <BiMoon />}
+        {mode ? <HiOutlineSun /> : <BiMoon />}
       </div>
+
       <div className="title">
         <h2>Redwan islam</h2>
         <p>
@@ -85,6 +88,7 @@ function Sidebar({ toggleThem }) {
           />
         </p>
       </div>
+
 
       <div className="imgBox">
         <img src={Person} alt="hero img" />

@@ -13,7 +13,8 @@ const AboutStyle = styled.div`
   }
   .para{
     margin-bottom: 1.5rem;
-    color: ${({theme}) => theme.descColor};
+    color: ${({theme}) => theme.descColor}
+;
   }
 
 `;
