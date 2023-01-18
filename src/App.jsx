@@ -15,11 +15,11 @@ const AppStyle = styled.div`
   }
   .right {
     flex: 2.5;
-  }
+  };
 
   @media (max-width: 968px) {
     flex-direction: column;
-  }
+  };
 
   @media (min-width: 980px) {
     gap: 1;

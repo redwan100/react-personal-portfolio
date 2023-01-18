@@ -1,11 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from '../pages/Home';
-import Resume from '../pages/Resume';
-import Blog from '../pages/Blog';
-import Contact from '../pages/Contact';
-import Portfolio from '../pages/Portfolio';
-import Navbar from '../components/nav/Navbar';
-import Error from '../pages/Error';
+import { Home, Resume, Blog, Contact, Portfolio, Navbar, Error } from '../components';
 
 function Router() {
   return (

@@ -30,7 +30,7 @@ const NavbarStyle = styled.div`
     padding: 1.4rem;
     margin-right: 0.5rem;
     transition: all 0.3s;
-    color:  ${({ theme }) => theme.fontColor} !important;
+    color: ${({ theme }) => theme.fontColor} !important;
 
     &:hover {
       background-color: ${({ theme }) => theme.btnClr};
